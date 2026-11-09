@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wazobiamail"
+version = "0.1.0"
+description = "Official WazobiaMail Python SDK - transactional email, domains, hosted mailboxes, deliverability"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+  { name = "Bowofade Oyerinde", email = "bowofade@bonifade.com" },
+]
+keywords = [
+  "wazobiamail",
+  "email",
+  "transactional-email",
+  "smtp",
+  "mailboxes",
+  "deliverability",
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Communications :: Email",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://wazobiamail.com"
+Repository = "https://github.com/WazobiaMail/wazobiamail-python"
+Issues = "https://github.com/WazobiaMail/wazobiamail-python/issues"
+
+[tool.setuptools.packages.find]
+include = ["wazobiamail*"]
+
+[tool.setuptools.package-data]
+wazobiamail = ["py.typed"]
+
+[tool.setuptools.exclude-package-data]
+wazobiamail = ["__pycache__/*", "**/__pycache__/*", "*.pyc", "**/*.pyc"]
