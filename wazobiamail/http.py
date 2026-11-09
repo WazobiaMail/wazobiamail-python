@@ -246,6 +246,7 @@ class HttpClient:
         except urllib.error.HTTPError as exc:
             raw_body = exc.read()
             response_headers = self._response_headers(exc.headers)
+            exc.close()
             self._raise_api_error(
                 int(exc.code), response_headers, raw_body, str(exc.reason or "")
             )

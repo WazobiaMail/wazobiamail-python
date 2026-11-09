@@ -17,9 +17,10 @@ _CAMEL_BOUNDARY = re.compile(r"(?<=[a-z0-9])([A-Z])")
 
 
 def snake_case(name: str) -> str:
-    """Convert a camelCase or PascalCase API field to snake_case."""
+    """Convert a camelCase, PascalCase or acronym-prefixed API field to snake_case."""
 
-    return _CAMEL_BOUNDARY.sub(r"_\1", name).lower()
+    first_pass = re.sub(r"(.)([A-Z][a-z]+)", r"\1_\2", name)
+    return _CAMEL_BOUNDARY.sub(r"_\1", first_pass).lower()
 
 
 def normalize(data: Any) -> Dict[str, Any]:

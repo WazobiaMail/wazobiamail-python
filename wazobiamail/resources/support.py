@@ -110,15 +110,16 @@ class SupportResource(Resource):
         """
 
         if name is None or email is None:
-            try:
-                account = self._identity()
-                if name is None:
-                    name = account.name or account.username or account.email
-                if email is None:
-                    email = account.email
-            except Exception:
-                name = name or "Customer"
-                email = email or "user@example.com"
+            account = self._identity()
+            if name is None:
+                name = account.name or account.username or account.email
+            if email is None:
+                email = account.email
+        if not name or not email:
+            raise ValueError(
+                "A support ticket needs a name and email. Pass them explicitly for "
+                "unauthenticated ticket creation."
+            )
 
         body: Dict[str, Any] = {
             "name": name,
