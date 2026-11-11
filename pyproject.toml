@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "wazobiamail"
 version = "0.1.0"
-description = "Official WazobiaMail Python SDK for transactional email via API. WazobiaMail is a Resend alternative that also supports SMTP, with domains, hosted mailboxes, and deliverability tools."
+description = "Official WazobiaMail Python SDK for transactional email via API. Start free with 3,000 emails/month. A Resend alternative that also supports SMTP, with domains, hosted mailboxes, and deliverability tools."
 readme = "README.md"
 requires-python = ">=3.9"
 license = "MIT"
