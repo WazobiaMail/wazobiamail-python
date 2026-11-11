@@ -775,6 +775,18 @@ MIT. See [LICENSE](LICENSE).
 
 ---
 
+## Reading spam-check scores
+
+The spam check returns a penalty `score`, a `threshold`, an `isSpam` boolean and an inverse `deliverabilityScore` (0–100, higher is better).
+
+| `score` | `rating` | `isSpam` | `deliverabilityScore` | Decision |
+| --- | --- | --- | --- | --- |
+| `0.0 – 1.9` | `low_risk` | `false` | `81 – 100` | **Okay to send.** Clean or only minor findings. |
+| `2.0 – 4.9` | `moderate_risk` | `false` | `51 – 80` | **Review first.** Not blocked, but fix the highest-point rules before sending. |
+| `5.0 +` | `high_risk` | `true` | `0 – 50` | **Do not send.** Fix the findings and re-run the check. |
+
+`isSpam` is the authoritative decision: it is true when `score >= threshold`. Read `threshold` from the response instead of hard-coding `5.0`; the server can change it. A green score is not a delivery guarantee — domain authentication, sender reputation and recipient engagement still matter.
+
 ## Official WazobiaMail SDKs
 
 WazobiaMail is a **Resend alternative** for transactional email through an **API or SMTP**, with sending domains, hosted mailboxes and deliverability tools. Start free with **3,000 emails/month**.
