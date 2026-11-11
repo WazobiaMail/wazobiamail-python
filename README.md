@@ -802,6 +802,7 @@ The SDKs below all use the WazobiaMail API; SMTP/legacy clients that need SMTP s
 | PHP | `composer require wazobiamail/wazobiamail-php` | [Packagist](https://packagist.org/packages/wazobiamail/wazobiamail-php) | [GitHub](https://github.com/WazobiaMail/wazobiamail-php) |
 | Laravel | `composer require wazobiamail/wazobiamail-laravel` | [Packagist](https://packagist.org/packages/wazobiamail/wazobiamail-laravel) | [GitHub](https://github.com/WazobiaMail/wazobiamail-laravel) |
 | Rust | `cargo add wazobiamail` | [crates.io](https://crates.io/crates/wazobiamail) | [GitHub](https://github.com/WazobiaMail/wazobiamail-rust) |
+| Go | `go get github.com/WazobiaMail/wazobiamail-go@v0.1.0` | [pkg.go.dev](https://pkg.go.dev/github.com/WazobiaMail/wazobiamail-go) | [GitHub](https://github.com/WazobiaMail/wazobiamail-go) |
 | WordPress | Upload the plugin ZIP | [Packagist](https://packagist.org/packages/wazobiamail/wazobiamail-wordpress) · [GitHub releases](https://github.com/WazobiaMail/wazobiamail-wordpress/releases) | [GitHub](https://github.com/WazobiaMail/wazobiamail-wordpress) |
 
 ### What each package gives you
@@ -813,6 +814,7 @@ The SDKs below all use the WazobiaMail API; SMTP/legacy clients that need SMTP s
 - **PHP (`wazobiamail/wazobiamail-php`)** — A Composer/Guzzle 7 client for PHP 8.1+. It accepts ergonomic flat send payloads or the canonical nested `content` shape, supports URL attachments and automatic multipart upload for inline files, and maps API failures to typed exceptions.
 - **Laravel (`wazobiamail/wazobiamail-laravel`)** — Registers a native `wazobiamail` mail driver, service provider and `WazobiaMail` facade for Laravel 10–13. Existing `Mail`, Mailables and notifications keep working; the package also exposes domains, mailboxes and webhook verification.
 - **Rust (`wazobiamail`)** — Async, strongly typed and `#![forbid(unsafe_code)]`, built on reqwest/tokio. Includes fluent request builders, typed response models, typed errors, secret masking in `Debug`, and resources for sending, domains, Cloudflare DNS, mailboxes, templates, tracking and billing.
+- **Go (`github.com/WazobiaMail/wazobiamail-go`)** — Context-first, concurrency-safe and zero-dependency (standard library only). Typed request/response models, API-key or Bearer auth, multipart attachments, domains, mailboxes, billing, units, plans, support, templates and HMAC webhook verification.
 - **WordPress (`wazobiamail-wordpress`)** — Routes every `wp_mail()` call through the WazobiaMail API without changing forms or plugins. It registers the site domain, displays SPF/DKIM/DMARC/MX records, verifies DNS, uploads attachments, and keeps recent delivery receipts in the admin screen.
 
 ### Documentation links
