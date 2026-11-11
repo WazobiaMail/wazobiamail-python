@@ -88,7 +88,7 @@ class TestPackaging(unittest.TestCase):
             self.skipTest("tomllib unavailable")
         project = self.pyproject["project"]
         self.assertEqual(project["name"], "wazobiamail")
-        self.assertEqual(project["license"]["text"], "MIT")
+        self.assertEqual(project["license"], "MIT")
         self.assertIn("WazobiaMail", project["description"])
         self.assertTrue((PROJECT_DIR / "LICENSE").exists())
 

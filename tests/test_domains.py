@@ -224,7 +224,7 @@ class TestDomains(MockServerTestCase):
         self.make_client().domains.cloudflare.disconnect(domain_id="dom_123")
         self.assertEqual(self.server.last.method, "DELETE")
         self.assertEqual(
-            self.server.last.query_dict(), {"domain_id": "dom_123"}
+            self.server.last.query_dict(), {"domainId": "dom_123"}
         )
         self.assertEqual(self.server.last.body, b"")
 

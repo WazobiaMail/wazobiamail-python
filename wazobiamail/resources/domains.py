@@ -68,7 +68,7 @@ class CloudflareResource(Resource):
         return self._request(
             "DELETE",
             "/sending/domains/cloudflare/disconnect",
-            params={"domain_id": domain_id},
+            params={"domainId": domain_id},
             send_json=False,
             timeout=timeout,
         )
